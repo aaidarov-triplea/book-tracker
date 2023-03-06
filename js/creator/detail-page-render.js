@@ -5,7 +5,7 @@ export const detailPageRendering = (data) => {
   
   h1.textContent = data.name
   tds[0].textContent = 'Жанры:'
-  tds[1].textContent = Array(data.genres)
+  tds[1].textContent = data.genres
   tds[2].textContent = 'Автор:'
   tds[3].textContent = data.author
   tds[4].textContent = 'Год выпуска:'
@@ -16,4 +16,6 @@ export const detailPageRendering = (data) => {
   tds[9].textContent = data.publishHouse
   tds[10].textContent = 'Колличество страниц:'
   tds[11].textContent = Number(data.pagesNumber)
+
+  return data
   }

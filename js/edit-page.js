@@ -20,17 +20,18 @@ getDetailsBook(id)
     language.value = data.originalLanguage
 
     let newBook = {
-      name: name.value,
-      author: author.value,
-      publishYear:  Number(publish.value),
-      publishHouse: publishHouse.value,
-      pagesNumber: Number(pages.value),
-      genres: Array(genres.value),
-      originalLanguage: language.value
+      "name": name.value,
+      "author": author.value,
+      "publishYear":  Number(publish.value),
+      "publishHouse": publishHouse.value,
+      "pagesNumber": Number(pages.value),
+      "genres": Array(genres.value),
+      "originalLanguage": language.value
     }
     saveBtn.addEventListener('click', (e) => {
       e.preventDefault()
-      editBook(newBook, id)
+     editBook(newBook, id)
+      console.log(editBook(newBook, id))
       location.href = 'index.html'
     })
 })

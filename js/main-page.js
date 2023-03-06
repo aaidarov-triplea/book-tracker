@@ -3,10 +3,9 @@ import { deleteSvg } from './svg-icons.js'
 import { deleteBook, getBooks } from './api.js'
 import { editBook } from './api.js'
 
-
 export const renderBookItem = (data) => {
-  let like = null
 
+  let like
   if (data.isFavorite) {
     like = `
     <svg class="svg" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,6 +36,7 @@ export const renderBookItem = (data) => {
 
   deleteBtn.addEventListener('click', () => {
     deleteBook(data.id)
+    location.reload()
   })
 
   likeBtn.addEventListener('click', () => {
@@ -47,14 +47,14 @@ export const renderBookItem = (data) => {
     : favoritValue = true
 
     let newBook = {
-      name: data.name,
-      author: data.author,
-      publishYear:  Number(data.publishYear),
-      publishHouse: data.publishHouse,
-      pagesNumber: Number(data.pagesNumber),
-      genres: Array(data.genres),
-      originalLanguage: data.originalLanguage,
-      isFavorite: favoritValue
+      "name": data.name,
+      "author": data.author,
+      "publishYear":  Number(data.publishYear),
+      "publishHouse": data.publishHouse,
+      "pagesNumber": Number(data.pagesNumber),
+      "genres": Array(data.genres),
+      "originalLanguage": data.originalLanguage,
+      "isFavorite": favoritValue
     }
     
     editBook(newBook, data.id)

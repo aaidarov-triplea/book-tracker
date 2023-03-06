@@ -15,7 +15,6 @@ export const getBooks = async () => {
 
 export const getDetailsBook = async(id) => {
   const response = await fetch(URL(`/books/detail/${ id }`, ))
-  console.log(response)
   const detailsBook = await response.json()
   return detailsBook
 }
