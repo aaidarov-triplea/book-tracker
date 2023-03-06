@@ -8,6 +8,7 @@ document.querySelector('.book-detail a').setAttribute('href', `/edit.html?id=${i
 getDetailsBook(id)
 .then((data) => {
   detailPageRendering(data)
+  console.log(detailPageRendering(data))
 
   const deleteBtn = Array.from(document.querySelectorAll('.delete-btn'))
   deleteBtn[0].addEventListener('click', () => {
